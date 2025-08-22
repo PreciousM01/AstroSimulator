@@ -20,9 +20,15 @@ export default function Features() {
             icon: "🎬"
         },
         {
-            title: "Interactive Controls",
-            description: "Adjust simulation parameters, zoom levels, and viewing modes to create your perfect cosmic visualization.",
-            icon: "🎮"
+            title: "Apply Transformations",
+            description: "Select from a range of transformations that fit your specific need.",
+            icon: "🎮",
+            transformations: [
+                "Center Visualization on a Selected Subhalo",
+                "Adjust Bulk Velocity Parameters",
+                "Apply Radius Cuts Based on Data Filtering",
+                "Simulate Across a Customizable Timeline"
+            ]
         }
     ];
 
@@ -42,6 +48,13 @@ export default function Features() {
                 <div className="text-6xl mb-4">{features[currentFeature].icon}</div>
                 <h3 className="text-2xl font-bold text-blue-400 mb-4">{features[currentFeature].title}</h3>
                 <p className="text-lg text-gray-200 leading-relaxed">{features[currentFeature].description}</p>
+                {features[currentFeature].transformations && (
+                    <ul>
+                        {features.transformations.map((t, i) => (
+                        <li key={i}>{t}</li>
+                        ))}
+                    </ul>
+                    )}
             </div>
             
             <div className="flex justify-between items-center">

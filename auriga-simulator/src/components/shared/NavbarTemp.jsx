@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="bg-black text-white px-6 py-4 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo or App Name */}
-        <h1 className="text-xl font-bold">AurigaSim</h1>
+        <h1 className="text-xl font-bold">AuGa VS</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 font-medium">
