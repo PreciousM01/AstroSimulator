@@ -5,18 +5,18 @@ export default function Features() {
     
     const features = [
         {
-            title: "Galaxy Simulation",
-            description: "Experience the evolution of entire galaxies with scientifically accurate simulations based on the Auriga project.",
+            title: "Auriga Galaxies",
+            description: "Access all 31 Milky-way Galaxies from the Auriga Cosmological Suite",
             icon: "🌌"
         },
         {
             title: "Subhalo Tracking",
-            description: "Follow individual dark matter subhalos as they merge, interact, and shape galactic structure over cosmic time.",
+            description: "Follow the evolution of individual subhalos, or track their activities as they merge, interact, and shape galactic structure over cosmic time.",
             icon: "🔍"
         },
         {
-            title: "High-Resolution Rendering",
-            description: "Generate stunning 4K videos with customizable camera angles, time scales, and visual effects.",
+            title: "Color Code your VideoSimulation",
+            description: "Choose to color the subhalo you are interested in by various metrics such as stellar metallicity, age properties, mass, infall time.",
             icon: "🎬"
         },
         {
@@ -50,7 +50,7 @@ export default function Features() {
                 <p className="text-lg text-gray-200 leading-relaxed">{features[currentFeature].description}</p>
                 {features[currentFeature].transformations && (
                     <ul>
-                        {features.transformations.map((t, i) => (
+                        {features[currentFeature].transformations.map((t, i) => (
                         <li key={i}>{t}</li>
                         ))}
                     </ul>

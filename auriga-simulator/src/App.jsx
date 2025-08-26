@@ -14,13 +14,14 @@ function App() {
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/VisualizePage" element={<Visualize />} />
-      <Route path="/AboutPage" element={<About />} />
-      <Route path="AurigaPage" element={<Auriga />} />
-      <Route path="/escape-room" element={<EscapeRoom />} />
+      <Route path="/visualize" element={<Visualize />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/auriga" element={<Auriga />} />
     </Routes>
     </>
    );
 }
 
 export default App
+
+// <Route path="/escape-room" element={<EscapeRoom />} />

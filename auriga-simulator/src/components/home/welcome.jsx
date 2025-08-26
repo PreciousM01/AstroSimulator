@@ -11,7 +11,7 @@ export default function Welcome() {
         visualize galactic structures, and share your discoveries with the world.
       </p>
       <div className="flex space-x-4">
-        <Link to="../../pages/VisualizePage">
+        <Link to="/visualize">
             <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
           Start Exploring
         </button>

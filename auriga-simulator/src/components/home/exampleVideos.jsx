@@ -21,7 +21,7 @@ export default function ExampleVideos() {
         <div>
             <h2 className="text-4xl font-bold text-white mb-8">Example Simulations</h2>
             <p className="text-lg text-gray-200 mb-8">
-                Explore these sample videos to see what's possible with AurigaSim
+                Explore these sample videos to see what's possible with AuGa VS
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

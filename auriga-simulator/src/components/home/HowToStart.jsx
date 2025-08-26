@@ -16,7 +16,7 @@ export default function HowToStart() {
         },
         {
             title: "Customize Settings",
-            description: "Adjust time scales, camera angles, resolution, and visual effects to match your vision.",
+            description: "Adjust time scales and select colorcode properties to match your vision.",
             action: "Fine-tune your simulation parameters"
         },
         {
