@@ -6,7 +6,7 @@ export default function Features() {
     const features = [
         {
             title: "Auriga Galaxies",
-            description: "Access all 31 Milky-way Galaxies from the Auriga Cosmological Suite",
+            description: "Access 31 Milky Way-like Galaxies from the Auriga Cosmological Suite",
             icon: "🌌"
         },
         {
