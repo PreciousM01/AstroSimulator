@@ -6,7 +6,7 @@ export default function HowToStart() {
     const steps = [
         {
             title: "Choose Your Galaxy",
-            description: "Select from 31 different Auriga galaxies (0-30), each with unique properties and evolutionary histories.",
+            description: "Select from 30 different Auriga galaxies (1-30), each with unique properties and evolutionary histories.",
             action: "Browse available galaxies and pick your favorite"
         },
         {
@@ -38,7 +38,7 @@ export default function HowToStart() {
         <div>
             <h2 className="text-4xl font-bold text-white mb-8">How to Get Started</h2>
             
-            <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg p-8 mb-6">
+            <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg p-8 mb-6 min-h-[250px] flex flex-col">
                 <div className="flex items-center mb-4">
                     <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">
                         {currentStep + 1}
@@ -46,7 +46,7 @@ export default function HowToStart() {
                     <h3 className="text-2xl font-bold text-blue-400">{steps[currentStep].title}</h3>
                 </div>
                 <p className="text-lg text-gray-200 mb-4 leading-relaxed">{steps[currentStep].description}</p>
-                <div className="bg-white/10 rounded-lg p-4">
+                <div className="bg-white/10 rounded-lg p-4 mt-auto">
                     <p className="text-green-300 font-semibold">✓ {steps[currentStep].action}</p>
                 </div>
             </div>

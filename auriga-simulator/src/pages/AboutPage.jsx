@@ -38,7 +38,7 @@ export default function AboutPage() {
                                     </div>
                                     <div className="bg-white/10 p-4 rounded-lg">
                                         <h3 className="font-bold text-white mb-2">Galaxies</h3>
-                                        <p className="text-gray-300">31 unique Auriga simulations</p>
+                                        <p className="text-gray-300">30 unique Auriga simulations</p>
                                     </div>
                                     <div className="bg-white/10 p-4 rounded-lg">
                                         <h3 className="font-bold text-white mb-2">Time Range</h3>

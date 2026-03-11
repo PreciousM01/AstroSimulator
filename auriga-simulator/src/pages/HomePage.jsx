@@ -76,7 +76,7 @@ export default function HomePage() {
         >
           <div className="w-[70%] ml-8">
             <div className="bg-black/80 backdrop-blur-sm text-white p-8 rounded-xl w-full max-w-4xl shadow-2xl">
-              <Welcome />
+              <Welcome onLearnMore={() => setCurrentSection(1)} />
             </div>
           </div>
         </section>

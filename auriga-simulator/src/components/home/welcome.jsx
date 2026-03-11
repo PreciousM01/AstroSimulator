@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Welcome() {
+export default function Welcome({ onLearnMore }) {
   return (
     <div>
       <h1 className="text-6xl font-bold text-white mb-6">
@@ -16,11 +16,9 @@ export default function Welcome() {
           Start Exploring
         </button>
         </Link>
-        <a href="#features">
-            <button className="border border-white/30 hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+        <button onClick={onLearnMore} className="border border-white/30 hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-colors">
           Learn More
         </button>
-        </a>
       </div>
     </div>
   );

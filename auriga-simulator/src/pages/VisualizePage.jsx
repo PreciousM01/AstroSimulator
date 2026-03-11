@@ -7,9 +7,9 @@ export default function VisualizePage() {
     const [selectedSubhalo, setSelectedSubhalo] = useState(null);
     const [step, setStep] = useState('galaxy'); // 'galaxy', 'viewMode', 'subhalo', 'settings'
 
-    const galaxies = Array.from({length: 31}, (_, i) => ({
-        id: i,
-        name: `Auriga ${i}`,
+    const galaxies = Array.from({length: 30}, (_, i) => ({
+        id: i + 1,
+        name: `Auriga ${i + 1}`,
         mass: `${(Math.random() * 5 + 1).toFixed(1)} × 10¹² M☉`,
         subhalos: Math.floor(Math.random() * 50 + 20)
     }));
@@ -34,7 +34,7 @@ export default function VisualizePage() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-6xl font-bold text-white mb-6 drop-shadow-2xl">Select Auriga Galaxy</h2>
-                    <p className="text-2xl text-white/90 drop-shadow-lg">Choose from 31 different galaxy simulations</p>
+                    <p className="text-2xl text-white/90 drop-shadow-lg">Choose From 30 Different Galaxy Simulations</p>
                 </div>
                 
                 {/* Galaxy Grid */}

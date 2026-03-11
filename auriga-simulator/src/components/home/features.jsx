@@ -6,7 +6,7 @@ export default function Features() {
     const features = [
         {
             title: "Auriga Galaxies",
-            description: "Access 31 Milky Way-like Galaxies from the Auriga Cosmological Suite",
+            description: "Access 30 Milky Way-like Galaxies from the Auriga Cosmological Suite",
             icon: "🌌"
         },
         {
@@ -24,10 +24,7 @@ export default function Features() {
             description: "Select from a range of transformations that fit your specific need.",
             icon: "🎮",
             transformations: [
-                "Center Visualization on a Selected Subhalo",
-                "Adjust Bulk Velocity Parameters",
-                "Apply Radius Cuts Based on Data Filtering",
-                "Simulate Across a Customizable Timeline"
+                "Center Visualization, adjust Bulk Velocity Parameters, Radius Cut, Customize Timeline"
             ]
         }
     ];
@@ -44,7 +41,7 @@ export default function Features() {
         <div>
             <h2 className="text-4xl font-bold text-white mb-8">Key Features</h2>
             
-            <div className="bg-white/10 rounded-lg p-8 mb-6">
+            <div className="bg-white/10 rounded-lg p-8 mb-6 min-h-[250px] flex flex-col">
                 <div className="text-6xl mb-4">{features[currentFeature].icon}</div>
                 <h3 className="text-2xl font-bold text-blue-400 mb-4">{features[currentFeature].title}</h3>
                 <p className="text-lg text-gray-200 leading-relaxed">{features[currentFeature].description}</p>
