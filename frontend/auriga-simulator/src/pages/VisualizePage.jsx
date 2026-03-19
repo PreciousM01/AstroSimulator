@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import BackgroundVideo from '../components/shared/BackgroundVideo';
+import SimulateButton from '../components/simulate/SimulateButton';
 
 export default function VisualizePage() {
     const [selectedGalaxy, setSelectedGalaxy] = useState(null);
     const [viewMode, setViewMode] = useState(null);
     const [selectedSubhalo, setSelectedSubhalo] = useState(null);
     const [step, setStep] = useState('galaxy'); // 'galaxy', 'viewMode', 'subhalo', 'settings'
+    const [timeType, setTimeType] = useState('lookback'); // 'lookback' | 'redshift'
+    const [startTime, setStartTime] = useState('');
+    const [endTime, setEndTime] = useState('');
 
     const galaxies = Array.from({length: 30}, (_, i) => ({
         id: i + 1,
@@ -161,23 +165,56 @@ export default function VisualizePage() {
                     </p>
                 </div>
                 
-                <div className="bg-black/60 backdrop-blur-lg rounded-2xl p-10 border border-white/30 mb-8">
-                    <h3 className="text-2xl font-bold text-blue-400 mb-8 drop-shadow-lg">Video Configuration</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <label className="block text-white font-semibold mb-3 text-lg drop-shadow-sm">Resolution</label>
-                            <select className="w-full bg-black/40 backdrop-blur-sm text-white p-4 rounded-xl border border-white/30 hover:border-blue-400 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option>1080p (1920×1080)</option>
-                                <option>4K (3840×2160)</option>
-                            </select>
+                <div className="bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-white/30 mb-8 flex flex-col items-center">
+                    <h3 className="text-2xl font-bold text-blue-400 mb-6 drop-shadow-lg">Time Range</h3>
+
+                    {/* Toggle */}
+                    <div className="flex rounded-xl overflow-hidden border border-white/30 mb-8">
+                        <button
+                            onClick={() => { setTimeType('lookback'); setStartTime(''); setEndTime(''); }}
+                            className={`px-6 py-2 text-sm font-semibold transition-all duration-200 ${timeType === 'lookback' ? 'bg-blue-600 text-white' : 'bg-black/40 text-white/60 hover:text-white'}`}
+                        >
+                            Lookback Time
+                        </button>
+                        <button
+                            onClick={() => { setTimeType('redshift'); setStartTime(''); setEndTime(''); }}
+                            className={`px-6 py-2 text-sm font-semibold transition-all duration-200 ${timeType === 'redshift' ? 'bg-blue-600 text-white' : 'bg-black/40 text-white/60 hover:text-white'}`}
+                        >
+                            Redshift
+                        </button>
+                    </div>
+
+                    {/* Start / End inputs */}
+                    <div className="flex gap-8 w-full max-w-md">
+                        <div className="flex flex-col items-center flex-1 gap-2">
+                            <label className="text-white font-semibold text-sm drop-shadow-sm">
+                                Start {timeType === 'lookback' ? '(Gyr)' : '(z)'}
+                            </label>
+                            <input
+                                type="number"
+                                value={startTime}
+                                onChange={(e) => setStartTime(e.target.value)}
+                                min={0}
+                                max={timeType === 'lookback' ? 13.8 : 20}
+                                step={timeType === 'lookback' ? 0.1 : 0.01}
+                                placeholder={timeType === 'lookback' ? '0.0' : '0.00'}
+                                className="w-full bg-black/40 text-white text-center border border-white/30 rounded-xl px-4 py-2 focus:outline-none focus:border-blue-400 placeholder-white/30"
+                            />
                         </div>
-                        <div>
-                            <label className="block text-white font-semibold mb-3 text-lg drop-shadow-sm">Duration</label>
-                            <select className="w-full bg-black/40 backdrop-blur-sm text-white p-4 rounded-xl border border-white/30 hover:border-blue-400 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                <option>30 seconds</option>
-                                <option>1 minute</option>
-                                <option>2 minutes</option>
-                            </select>
+                        <div className="flex flex-col items-center flex-1 gap-2">
+                            <label className="text-white font-semibold text-sm drop-shadow-sm">
+                                End {timeType === 'lookback' ? '(Gyr)' : '(z)'}
+                            </label>
+                            <input
+                                type="number"
+                                value={endTime}
+                                onChange={(e) => setEndTime(e.target.value)}
+                                min={0}
+                                max={timeType === 'lookback' ? 13.8 : 20}
+                                step={timeType === 'lookback' ? 0.1 : 0.01}
+                                placeholder={timeType === 'lookback' ? '13.8' : '20.00'}
+                                className="w-full bg-black/40 text-white text-center border border-white/30 rounded-xl px-4 py-2 focus:outline-none focus:border-blue-400 placeholder-white/30"
+                            />
                         </div>
                     </div>
                 </div>
@@ -190,9 +227,14 @@ export default function VisualizePage() {
                         ← Back
                     </button>
                     
-                    <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-4 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/50 drop-shadow-lg">
-                        🚀 Generate Simulation
-                    </button>
+                    <SimulateButton
+                        galaxy={selectedGalaxy}
+                        viewMode={viewMode}
+                        subhalo={selectedSubhalo}
+                        timeType={timeType}
+                        startTime={startTime}
+                        endTime={endTime}
+                    />
                 </div>
             </div>
         </div>
